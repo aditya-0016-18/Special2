@@ -166,6 +166,14 @@ For you ❤️
 
 
 <script>
+  const music = document.getElementById("bgMusic");
+
+if (localStorage.getItem("playMusic") === "true") {
+  music.volume = 0.6;
+  music.play();
+  localStorage.removeItem("playMusic");
+}
+
 
 // HAPPY BUNNY ENTER
 
@@ -239,5 +247,6 @@ setTimeout(()=>heart.remove(),8000);
 
 </body>
 </html>
+
 
 
