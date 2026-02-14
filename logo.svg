@@ -1,0 +1,75 @@
+<svg width="300" height="300" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Glass Gradient -->
+    <linearGradient id="glassGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b81" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#ff1744" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#8b0000" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Inner Glow -->
+    <radialGradient id="innerGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Soft Shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#ff1744" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Glow Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Floating subtle background glow -->
+  <circle cx="200" cy="200" r="140" fill="#ff1744" opacity="0.08">
+    <animate attributeName="r" values="140;155;140" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Main Heart -->
+  <path
+    d="M200 330
+       L70 200
+       A80 80 0 1 1 200 120
+       A80 80 0 1 1 330 200 Z"
+    fill="url(#glassGradient)"
+    filter="url(#shadow)"
+  >
+    <!-- Floating animation -->
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      values="0 0; 0 -10; 0 0"
+      dur="3s"
+      repeatCount="indefinite"/>
+  </path>
+
+  <!-- Inner glass highlight -->
+  <path
+    d="M200 300
+       L100 200
+       A60 60 0 1 1 200 150
+       A60 60 0 1 1 300 200 Z"
+    fill="url(#innerGlow)"
+    opacity="0.6"
+    filter="url(#glow)"
+  />
+
+  <!-- Tiny floating hearts -->
+  <circle cx="120" cy="90" r="6" fill="#ff6b81">
+    <animate attributeName="cy" values="90;70;90" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="300" cy="120" r="5" fill="#ff6b81">
+    <animate attributeName="cy" values="120;100;120" dur="6s" repeatCount="indefinite"/>
+  </circle>
+
+</svg>
