@@ -1,0 +1,9 @@
+{
+"name": "website-project",
+"version": "1.0.0",
+"description": "Modern website repository",
+"scripts": {
+"start": "echo 'Open src/index.html in browser'"
+},
+"license": "MIT"
+}

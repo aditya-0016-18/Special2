@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya | Cinematic Portfolio</title>
+
+  <link rel="icon" href="public/favicon.ico" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="public/music/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <img src="public/images/loading.gif" alt="Loading" />
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <img src="public/images/logo.svg" class="logo" alt="Logo" />
+
+    <h1 class="hero-text" id="heroText">
+      HI! Gayya<br>
+      Happy Valentine's Day
+    </h1>
+
+    <p class="hero-sub">
+      A chotu sa gift from me • It's difficult • Coz apni abhi jyada baat nahi horhi
+    </p>
+  </header>
+
+  <!-- PROJECT -->
+  <section class="section reveal">
+    <h2>Suchat nahi mala jasat pan thoda try kela 😅</h2>
+
+    <video class="project-video" autoplay muted loop playsinline>
+      <source src="public/videos/project.mp4" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="section reveal">
+    <h2>NOT MUCH I KNOW🙃🙃(It took me 2 days just to make these 3 pannels)</h2>
+    <p>I'm so sorry Gayu. I miss you soo much, ever since I met you, my life got better,
+        I will prove it to you that I'll be a better Boyfriend(a better husband🙃).
+        Who am I without my Gayu. Babu me ek notice kela apla ha 3rd valentine's aahe 
+        but apan kadhi nit celebrate nahi kela. I decided ki this year I'll do something
+        special, but he asa jhala:).<br>
+        It's my fault, I was the one who forgot the difference b/w "caring" & "controlling".<br>
+        I was the one who made you feel you are taken as granted.<br>
+        But Gayya no.<br>
+        I never took you for granted.<br>
+        Woh Master's waali baat was to motivate you to study:) kyuki I thought sath me rhene k imagination se you will feel motivated.<br>
+        Dekho I used to say the same during our exams ki padhoge to same college me rhege:).<br>
+        I thought ki If I told you that day, it would be meaningless.<br>
+        I'm so sorry.<br>
+        I don't want to be controlling freak. <br><br><br>
+         Gayya 1 baat kehni hai.<br>
+        If your family hurt you or you cannot meet them frequently....<br>
+        do you leave your family:)....<br>
+        No right.   Then why me:).<br>
+        Don't worry I'll not send this to you now.<br>
+        I LOVE YOU SOO MUCH<br>
+        It's very difficult for me and you too:)<br>
+        Aaaaaa....<br>
+        I can't control my tears rn.<br>
+        Gayya Please can you give me a LAST CHANCE<br>
+        I promise to be better please<br><br>
+        Please Stay<br><br>
+        I have never imagined a life without YOU Gayya.<br>
+        Can my voice reach to you abhi please God:)<br>
+        You come into my dreams roz..roz<br>
+        You said not to cry:)<br>
+        Pan mala roz radu yetay, mala tujhi awaz radtana yete:)<br>
+        Not joking, not manipulating<br>
+        asa vattay konhala tari sangu, ki mala bara nahi vatat<br>
+        Pan konhala sangu....<br>
+        Didi la tiche swathache tension astat<br>
+        Khup try krtoy swathala distract karaycha, ratricha 12-12:30 paryant khelaycha try krtoy<br>
+        Gym pan band jhali karan me 2 weeks pasun ajari aahe<br>
+        Mala yevda hotay tar kadhi kadhi vichar yeto TU THIK ASEL NA:)..<br>
+        Prathmesh sobat walk la jato pan fakt 30mins, nantar I go akele<br>
+        You asked to wait if you can...<br>
+        khara sangu Gayya nahi hot babu:)<br>
+        azun 14 days baki aahe<br><br>
+        Majhiya kade parat yeshil na Gayya<br><br>
+        Khup bak bak keli.  I'll wait for you.<br>
+        I believe in you<br>
+        You will come back to me<br>
+        I LOVE YOU SOOO MUCHH<br>
+        I have asked this on snapchat too😅. But aapne reply nahi diya. Break chal raha hai mai hi bewakoof hu😅<br>
+        <br><br><br>
+        WILL YOU BE MY VALENTINE THIS YEAR TOO MY LOVE?<br><br>
+        🥹🥹🥹🥹🥹🥹🥹🥹🫶🏻🫶🏻🫶🏻<br>
+        🫶🏻🫶🏻🫶🏻🫶🏻🫶🏻🩷🩷🩷🩷<br>
+        🩷🩷🩷🚁🚁🚁🚁🚁🚁<br>
+        🚁🏍🏍🏍🏍🏍🏍🏍🏍<br>
+        🤭🤭🤭🤭🤭🤭🤭<br>
+
+    </p>
+  </section>
+
+  <!-- CINEMATIC BUTTON -->
+  <div style="text-align:center; margin:60px;">
+    <button onclick="goToQuestion()" class="cinema-btn">
+      <span>Enter Our Story ❤️</span>
+    </button>
+  </div>
+
+  <footer class="footer">
+    © forever Gayu&Adu
+  </footer>
+
+  <script src="main.js"></script>
+
+  <script>
+    function goToQuestion() {
+
+      const music = document.getElementById("bgMusic");
+
+      // Start music after click (browser allows this)
+      music.volume = 0.6;
+      music.play();
+
+      // Small delay before page change
+      setTimeout(() => {
+        window.location.href = "question.html";
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>

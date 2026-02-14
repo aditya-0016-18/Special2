@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Our Story ❤️</title>
+<style>
+
+body{
+margin:0;
+background:black;
+overflow:hidden;
+font-family:Segoe UI;
+}
+
+/* SCENE SYSTEM */
+
+.scene{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+transition:opacity 2s;
+}
+
+.active{
+opacity:1;
+}
+
+/* HAPPY BUNNY */
+
+#happyBunny{
+position:absolute;
+bottom:40px;
+left:-300px;
+width:150px;
+max-width:30vw;
+transition:left 4s linear;
+}
+
+/* message text */
+
+.text{
+color:white;
+font-size:48px;
+opacity:0;
+transition:opacity 2s;
+}
+
+/* UPDATED SLIDESHOW STYLE */
+
+.slide{
+position:absolute;
+width:70%;
+height:70%;
+object-fit:contain;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+border-radius:20px;
+box-shadow:0 20px 60px rgba(255,0,80,0.4);
+opacity:0;
+transition:opacity 2s, transform 6s;
+}
+
+.slide.active{
+opacity:1;
+transform:translate(-50%, -50%) scale(1.05);
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+color:red;
+animation:floatUp 8s linear infinite;
+}
+
+@keyframes floatUp{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+.slide{
+width:90%;
+height:70%;
+}
+
+#happyBunny{
+width:100px;
+}
+
+.text{
+font-size:28px;
+}
+
+}
+
+</style>
+
+
+</head>
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="public/music/song.mp3">
+</audio>
+
+
+<!-- SCENE 3 — HAPPY BUNNY WITH FLOWERS -->
+
+<div class="scene active" id="scene3">
+
+<img src="public/images/happy-bunny-flowers.gif" id="happyBunny">
+
+<div class="text" id="loveText">
+For you ❤️
+</div>
+
+</div>
+
+
+<!-- SCENE 4 — GALLERY -->
+
+<div class="scene" id="scene4">
+
+<img src="public/images/photo1.jpg" class="slide active">
+<img src="public/images/photo2.jpg" class="slide">
+<img src="public/images/photo3.jpg" class="slide">
+<img src="public/images/photo4.jpg" class="slide">
+<img src="public/images/photo5.jpg" class="slide">
+<img src="public/images/photo6.jpg" class="slide">
+<img src="public/images/photo7.jpg" class="slide">
+<img src="public/images/photo8.jpg" class="slide">
+<img src="public/images/photo9.jpg" class="slide">
+<img src="public/images/photo10.jpg" class="slide">
+<img src="public/images/photo11.jpg" class="slide">
+<img src="public/images/photo12.jpg" class="slide">
+<img src="public/images/photo13.jpg" class="slide">
+<img src="public/images/photo14.jpg" class="slide">
+<img src="public/images/photo15.jpg" class="slide">
+<img src="public/images/photo16.jpg" class="slide">
+<img src="public/images/photo17.jpg" class="slide">
+<img src="public/images/photo18.jpg" class="slide">
+<img src="public/images/photo19.jpg" class="slide">
+<img src="public/images/photo20.jpg" class="slide">
+<img src="public/images/photo21.jpg" class="slide">
+<img src="public/images/photo22.jpg" class="slide">
+<img src="public/images/photo23.jpg" class="slide">
+<img src="public/images/photo24.jpg" class="slide">
+</div>
+
+
+<script>
+
+// HAPPY BUNNY ENTER
+
+const bunny = document.getElementById("happyBunny");
+const text = document.getElementById("loveText");
+
+setTimeout(()=>{
+bunny.style.left="40%";
+},500);
+
+setTimeout(()=>{
+text.style.opacity=1;
+},3000);
+
+
+// SWITCH TO GALLERY
+
+setTimeout(()=>{
+
+document.getElementById("scene3").classList.remove("active");
+
+document.getElementById("scene4").classList.add("active");
+
+startSlideshow();
+
+},6000);
+
+
+// SLIDESHOW
+
+function startSlideshow(){
+
+const slides=document.querySelectorAll(".slide");
+
+let i=0;
+
+setInterval(()=>{
+
+slides[i].classList.remove("active");
+
+i++;
+
+if(i>=slides.length) i=0;
+
+slides[i].classList.add("active");
+
+},4000);
+
+}
+
+
+// FLOATING HEARTS
+
+setInterval(()=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"%";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),8000);
+
+},400);
+
+</script>
+
+</body>
+</html>

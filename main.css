@@ -1,0 +1,228 @@
+/* ============================= */
+/* 💎 ULTRA LUXURY VALENTINE UI */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at 30% 20%, #1a0012, #050508 70%);
+  color: #f5f5f7;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ============================= */
+/* 🌹 FLOATING HEARTS BACKGROUND */
+/* ============================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../public/images/logo.svg");
+  background-repeat: repeat;
+  background-size: 120px;
+  opacity: 0.03;
+  animation: floatBg 40s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes floatBg {
+  from { transform: translateY(0); }
+  to { transform: translateY(-500px); }
+}
+
+/* ============================= */
+/* ⏳ LOADER */
+/* ============================= */
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #050508;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* ============================= */
+/* 🎬 HERO SECTION */
+/* ============================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(30px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 80, 0.08),
+    rgba(255, 0, 60, 0.02)
+  );
+  text-align: center;
+  padding: 2rem;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 10px 30px rgba(255, 0, 80, 0.4));
+}
+
+.hero-text {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -1px;
+
+  background: linear-gradient(
+    90deg,
+    #ff4d6d,
+    #ff1744,
+    #ff4d6d
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.hero-sub {
+  margin-top: 1rem;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+/* ============================= */
+/* 💎 GLASS SECTIONS */
+/* ============================= */
+
+.section {
+  margin: 5rem auto;
+  padding: 3rem;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(255, 0, 80, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(255, 0, 80, 0.25);
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.project-video {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 1rem;
+  box-shadow: 0 20px 60px rgba(255, 0, 80, 0.3);
+  transition: transform 0.4s ease;
+}
+
+.project-video:hover {
+  transform: scale(1.02);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.footer {
+  text-align: center;
+  padding: 3rem;
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+  .hero-text { font-size: 2rem; }
+  .section { padding: 2rem; }
+}
+/* ============================= */
+/* 🎬 CINEMATIC BUTTON */
+/* ============================= */
+
+.cinema-btn{
+position:relative;
+padding:18px 50px;
+font-size:20px;
+border:none;
+border-radius:60px;
+cursor:pointer;
+color:white;
+background:linear-gradient(45deg,#ff1744,#ff4d6d,#ff1744);
+background-size:200% 200%;
+animation:gradientMove 4s ease infinite;
+box-shadow:0 0 20px rgba(255,0,80,0.6),
+           0 0 60px rgba(255,0,80,0.4);
+overflow:hidden;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cinema-btn span{
+position:relative;
+z-index:2;
+letter-spacing:1px;
+}
+
+.cinema-btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.6),
+transparent
+);
+transition:0.6s;
+}
+
+.cinema-btn:hover::before{
+left:100%;
+}
+
+.cinema-btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 30px rgba(255,0,80,0.9),
+           0 0 80px rgba(255,0,80,0.6);
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
