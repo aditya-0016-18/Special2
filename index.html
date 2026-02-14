@@ -119,22 +119,16 @@
 
   <script src="main.js"></script>
 
-  <script>
-    function goToQuestion() {
+ <script>
+  function goToQuestion() {
+    setTimeout(() => {
+      window.location.href = "question.html";
+    }, 800);
+  }
+</script>
 
-      const music = document.getElementById("bgMusic");
-
-      // Start music after click (browser allows this)
-      music.volume = 0.6;
-      music.play();
-
-      // Small delay before page change
-      setTimeout(() => {
-        window.location.href = "question.html";
-      }, 800);
-    }
-  </script>
 
 </body>
 </html>
+
 
